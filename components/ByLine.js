@@ -1,11 +1,14 @@
 const ByLine = props => {
-  const {author, source} = props
+  let {author, source} = props
   if (!author && !source) {
-    return null;
+    return null
   }
-  let cls = 'byline';
+  if (source && author && author.toUpperCase() == source.toUpperCase()) {
+    author = ''
+  }
+  let cls = 'byline'
   if (author && source) {
-    cls += ' byline-full';
+    cls += ' byline-full'
   }
   return (
     <div className={cls}>

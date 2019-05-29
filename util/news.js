@@ -1,12 +1,4 @@
-//import fetch from 'isomorphic-unfetch'
-import axios from 'axios'
-
-/*
-process.on('unhandledRejection', err => {
-  console.log(err);
-  throw err;
-})
-*/
+import fetch from 'isomorphic-unfetch'
 
 const getApiUrl = (category, country) => `http://podvorny.com/vendor/api?feed=newsapi&type=top&category=${category}&country=${country}&size=100`
 
@@ -15,10 +7,11 @@ const news = async (category, country = 'us') => {
   const ret = {}
   console.log(`fetching '${url}'`)
   try {
-    const res = await axios.get(url)
-    if (res.error) throw new Error(res.error)
-    if (!res.data) throw new Error("Data is missing")
-    const data = res.data.data
+    const res = await fetch(url)
+    const json = await res.json()
+    if (json.error) throw new Error(json.error)
+    if (!json.data) throw new Error("Data is missing")
+    const data = json.data
     Object.assign(ret, data)
   } catch (x) {
     console.error(x)
