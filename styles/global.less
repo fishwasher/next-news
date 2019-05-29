@@ -1,0 +1,38 @@
+@font-family-serif: "Times New Roman", Times, serif;
+@font-family-sans: Arial, Helvetica, sans-serif;
+@font-family-mono: "Courier New", Courier, monospace;
+
+@screen-s-max: 750px;
+@screen-m-min: @screen-s-max + 1px;
+@screen-m-max: 900px;
+@screen-l-min: @screen-m-max + 1px;
+@screen-l-max: 1280px;
+@screen-xl-min: @screen-l-max + 1px;
+
+@screen-hd:  ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+               ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+               ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+               ~"only screen and (min-device-pixel-ratio: 1.5)";
+
+@small: ~"only screen and (max-width: @{screen-s-max})";
+@medium: ~"only screen and (min-width: @{screen-m-min}) and (max-width: @{screen-m-max})";
+@large: ~"only screen and (min-width: @{screen-l-min}) and (max-width: @{screen-l-max})";
+@xlarge: ~"only screen and (min-width: @{screen-xl-min})";
+@medium-up: ~"only screen and (min-width: @{screen-m-min})";
+@large-up: ~"only screen and (min-width: @{screen-l-min})";
+
+@print: ~"print";
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.error {
+  color: #c00;
+}
+
+footer {
+  margin: 2rem 0;
+}
