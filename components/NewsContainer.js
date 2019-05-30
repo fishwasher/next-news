@@ -1,6 +1,6 @@
 import ArticleList from './ArticleList'
 import ArticleCard from './ArticleCard'
-import '../styles/NewsContainer.less'
+import '../styles/newspage.less'
 
 const NewsContainer = props => {
   const {articles} = props
@@ -13,8 +13,8 @@ const NewsContainer = props => {
   const otherArticles = articles.slice(topListMax + 1)
 
   return (
-    <div className="news-container">
-      <div className="news-container-prim">
+    <div className="news-box">
+      <div className="news-box-prim">
         <div className="topstory">
           <ArticleCard article={articles[0]} />
         </div>
@@ -26,7 +26,7 @@ const NewsContainer = props => {
       }
       </div>
       {otherArticles.length ?
-        <div className="news-container-sec">
+        <div className="news-box-sec">
           <ArticleList articles={otherArticles} />
         </div>
         : null

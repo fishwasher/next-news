@@ -1,0 +1,231 @@
+@import 'global';
+
+.news-box {
+
+  width: 100%;
+  line-height: 1.1;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      width: 100%;
+    }
+  }
+
+  .article-card {
+    border-top: 1px dotted #999;
+    padding: 4px 0;
+  }
+
+  .byline {
+
+    font-size: 0.7rem;
+    font-family: @font-family-sans;
+    color: #999;
+
+    .source {
+      font-style: italic;
+      text-transform: uppercase;
+    }
+
+    .author {
+      font-weight: 400;
+    }
+  }
+
+  .title {
+    font-family: @font-family-serif;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .content {
+    max-height: 3rem;
+    text-overflow: ellipsis;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  figure{
+    overflow: hidden;
+
+    a {
+      display: block;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .details {
+    a {
+      display: block;
+      &:hover {
+        color: #00c;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .topstory {
+
+    .article-card {
+      padding-bottom: 1rem;
+    }
+
+    .byline {
+      font-size: 1rem;
+      margin: 0.2rem 0;
+    }
+
+    .title {
+      font-size: 1.4rem;
+    }
+
+    .description {
+      margin-top:1rem;
+    }
+  }
+
+  .toplist {
+
+    .article-card {
+      padding: 0.5rem 0;
+    }
+
+    .title {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0.3rem 0;
+    }
+
+  }
+
+  .news-box-sec {
+
+    line-height: 1.2;
+
+    .article-card {
+      padding: 0.3rem 0;
+    }
+
+    figure, img, .author, .description {
+      display: none;
+    }
+
+    .title {
+      font-size: 0.8rem;
+      font-weight: 400;
+    }
+  }
+
+  .byline-full {
+    .author {
+      &::after {
+        font-weight: normal;
+        content: ' | '
+      }
+    }
+  }
+}
+
+.news-footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  span {
+    align-self: stretch;
+  }
+  
+  .icon {
+    font-size: 24px;
+  }
+}
+
+/* MEDIUM AND ABOVE - two-column layout */
+
+@media @medium-up {
+
+  .news-box {
+    margin: 0 auto;
+    max-width: @screen-m-min;
+    .mixin-flex-onerow();
+
+    .news-box-sec {
+      max-width: 36%;
+      padding-left: 5%;
+    }
+  }
+}
+
+/* MEDIUM - wide article card */
+
+@media @medium {
+
+  .news-box {
+
+    .toplist {
+      .article-card {
+        .mixin-flex-onerow();
+
+        
+      }
+
+      figure {
+        min-width: 40%;
+        max-height: 200px;
+        overflow: hidden;
+        margin-right: 1rem;
+      }
+
+      img {
+        max-height: 160px;
+      }
+    }
+  }
+}
+
+/* LARGE - 2 cards per row */
+
+@media @large-up {
+  .news-box {
+    max-width: @screen-l-min;
+
+    .toplist {
+      ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+  
+        li {
+          width: 50%;
+        }
+      }
+
+      figure {
+        min-height: @thumb-large-height;
+      }
+  
+      img {
+        max-width:99%;
+        max-height: @thumb-large-height;
+      }
+    }
+
+    .news-box-sec {
+      min-width: 30%;
+      padding-left: 10px;
+    }
+  }
+}

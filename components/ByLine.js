@@ -1,11 +1,19 @@
+const upper = val => typeof val === 'string' && val.trim().toUpperCase() || ''
+
+const fixAuthor = (author, source) => {
+  let a = upper(author), s = upper(source)
+  if (a === s) return ''
+  if (a.startsWith('HTTP')) a = a.replace(/^HTTPS?:\/+/, '').toLowerCase()
+  if (a.endsWith('/')) a = a.replace(/\/+$/, '')
+  return a
+}
+
 const ByLine = props => {
   let {author, source} = props
   if (!author && !source) {
     return null
   }
-  if (source && author && author.toUpperCase() == source.toUpperCase()) {
-    author = ''
-  }
+  author = fixAuthor(author, source)
   let cls = 'byline'
   if (author && source) {
     cls += ' byline-full'

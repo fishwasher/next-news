@@ -1,0 +1,52 @@
+@import 'global';
+
+.home-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: table;
+  width: 100%;
+  height: 100%;
+  color: #ccf;
+  background-color: #012456;
+  font-family: @font-family-serif;
+
+  .home-inner {
+    display: table-cell;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  h1 {
+    margin-bottom: 4rem;
+  }
+
+  .categories {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      //width: 100%;
+      //text-align: left;
+
+      a {
+        color: #ffc;
+        text-decoration: none;
+        font-family: @font-family-mono;
+        text-transform: capitalize;
+      
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+

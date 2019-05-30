@@ -1,3 +1,3 @@
 import newsPageFactory from '../util/newsPageFactory'
 
-export default newsPageFactory('business')
+export default newsPageFactory('entertainment')

@@ -1,5 +1,7 @@
 import ByLine from './ByLine'
 
+//const fixContent = text => text.trim().replace(/\s*\[[^\]]*\]$/, '')
+
 const ArticleCard = props => {
   const {article} = props
   return [

@@ -1,6 +1,12 @@
-@font-family-serif: Georgia, "Times New Roman", Times, serif;
-@font-family-sans: Arial, Helvetica, sans-serif;
-@font-family-mono: "Courier New", Courier, monospace;
+// forcing external font import to be treated as CSS (not LESS), otherwise it fails
+@import (css) url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab|Material+Icons&display=swap');
+
+@font-family-serif: "Roboto Slab", serif;
+@font-family-sans: Roboto, sans-serif;
+@font-family-mono: "Roboto Mono", monospace;
+//@font-family-icon: "Material Icons";
+
+@thumb-large-height: 180px;
 
 @screen-s-max: 750px;
 @screen-m-min: @screen-s-max + 1px;
@@ -30,6 +36,7 @@
 }
 
 body {
+  box-sizing: border-box;
   font-family: @font-family-sans;
 }
 
@@ -39,4 +46,43 @@ body {
 
 footer {
   margin: 2rem 0;
+}
+
+.mixin-flex-row {
+  display: flex;
+  flex-direction: row;
+  //flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.mixin-flex-onerow {
+  .mixin-flex-row();
+    flex-wrap: nowrap;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  //font-size: 24px;  /* Preferred icon size */
+  font-size: 16px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }
