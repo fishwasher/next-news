@@ -54,6 +54,7 @@
 
   figure{
     overflow: hidden;
+    text-align: center;
 
     a {
       display: block;
@@ -73,7 +74,7 @@
   }
 
   img {
-    width: 100%;
+    max-width: 100%;
   }
 
   .topstory {
@@ -153,6 +154,42 @@
   }
 }
 
+/* SMALL-MEDIUM - wide article card */
+
+@media @small-medium {
+  .news-box {
+    padding-left: 0.5rem;
+
+    .toplist {
+      .article-card {
+        .mixin-flex-onerow();
+      }
+
+      figure {
+        min-width: @med-thumb-width;
+        margin-right: 1rem;
+      }
+
+      img {
+        max-width: @med-thumb-width;
+        max-height: @med-thumb-height;
+      }
+    }
+  }
+}
+
+/* SMALL - no side column, adjust image max height */
+
+@media @small {
+  .news-box {
+    .toplist {
+      img {
+        max-height: @small-thumb-height;
+      }
+    }
+  }
+}
+
 /* MEDIUM AND ABOVE - two-column layout */
 
 @media @medium-up {
@@ -169,32 +206,18 @@
   }
 }
 
-/* MEDIUM - wide article card */
+/* MEDIUM - with side column, adjust image max height */
 
 @media @medium {
-
   .news-box {
-
     .toplist {
-      .article-card {
-        .mixin-flex-onerow();
-
-        
-      }
-
-      figure {
-        min-width: 40%;
-        max-height: 200px;
-        overflow: hidden;
-        margin-right: 1rem;
-      }
-
       img {
-        max-height: 160px;
+        max-height: @med-thumb-height;
       }
     }
   }
 }
+
 
 /* LARGE - 2 cards per row */
 
@@ -209,17 +232,16 @@
         justify-content: space-between;
   
         li {
-          width: 50%;
+          width: 49%;
         }
       }
 
       figure {
-        min-height: @thumb-large-height;
+        min-height: @large-thumb-height;
       }
   
       img {
-        max-width:99%;
-        max-height: @thumb-large-height;
+        max-height: @large-thumb-height;
       }
     }
 
