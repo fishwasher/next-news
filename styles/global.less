@@ -1,17 +1,11 @@
 // forcing external font import to be treated as CSS (not LESS), otherwise it fails
-@import (css) url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab|Material+Icons&display=swap');
+//@import (css) url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab|Material+Icons&display=swap');
+@import (css) url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab&display=swap');
 
 @font-family-serif: "Roboto Slab", serif;
 @font-family-sans: Roboto, sans-serif;
 @font-family-mono: "Roboto Mono", monospace;
 //@font-family-icon: "Material Icons";
-
-/*
-@small-thumb-height: 160px;
-@med-thumb-height: 190px;
-@med-thumb-width: 200px;
-@large-thumb-height: 200px;
-*/
 
 @bgcolor-newspage: #000;
 @bgcolor-article-card: #dcdcdc;
@@ -69,29 +63,3 @@ button,
   cursor: pointer;
 }
 
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  //font-size: 24px;  /* Preferred icon size */
-  font-size: 16px;
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}

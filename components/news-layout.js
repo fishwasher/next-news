@@ -1,12 +1,14 @@
-import NavBox from './news-nav'
-import Footer from './news-footer'
+import NavBox from './news-nav';
+import Footer from './news-footer';
+import ArticleModal from './article-modal';
 
-const Layout = props => (
+const Layout = props => [
   <div>
     <NavBox />
     {props.children}
     <Footer />
-  </div>
-)
+  </div>,
+  <ArticleModal />
+];
 
-export default Layout
+export default Layout;
