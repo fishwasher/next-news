@@ -1,5 +1,5 @@
-import NavBox from './NewsNav'
-import Footer from './NewsFooter'
+import NavBox from './news-nav'
+import Footer from './news-footer'
 
 const Layout = props => (
   <div>

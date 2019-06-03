@@ -1,3 +1,4 @@
+import '../styles/news-footer.less'
 
 const Footer = () => (
   <footer className="news-footer">

@@ -6,10 +6,16 @@
 @font-family-mono: "Roboto Mono", monospace;
 //@font-family-icon: "Material Icons";
 
+/*
 @small-thumb-height: 160px;
 @med-thumb-height: 190px;
 @med-thumb-width: 200px;
 @large-thumb-height: 200px;
+*/
+
+@bgcolor-newspage: #000;
+@bgcolor-article-card: #dcdcdc;
+@bgcolor-article-card-high: #fff;
 
 @screen-xs-max: 480px;
 @screen-s-min: @screen-xs-max + 1px;
@@ -32,6 +38,7 @@
 @medium-large: ~"only screen and (min-width: @{screen-m-min}) and (max-width: @{screen-l-max})";
 @large: ~"only screen and (min-width: @{screen-l-min}) and (max-width: @{screen-l-max})";
 @xlarge: ~"only screen and (min-width: @{screen-xl-min})";
+@small-up: ~"only screen and (min-width: @{screen-s-min})";
 @medium-up: ~"only screen and (min-width: @{screen-m-min})";
 @large-up: ~"only screen and (min-width: @{screen-l-min})";
 
@@ -46,6 +53,7 @@
 body {
   box-sizing: border-box;
   font-family: @font-family-sans;
+  background-color: @bgcolor-newspage;
 }
 
 .error {
@@ -56,18 +64,11 @@ footer {
   margin: 2rem 0;
 }
 
-.mixin-flex-row {
-  display: flex;
-  flex-direction: row;
-  //flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: stretch;
+button,
+.button {
+  cursor: pointer;
 }
 
-.mixin-flex-onerow {
-  .mixin-flex-row();
-    flex-wrap: nowrap;
-}
 
 .material-icons {
   font-family: 'Material Icons';

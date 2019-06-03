@@ -1,8 +1,8 @@
-import conf from './newsConf'
-import getNews from './getNews'
-import Layout from '../components/NewsLayout'
-import Head from '../components/CustomHead'
-import NewsContainer from '../components/NewsContainer'
+import conf from './news-categories'
+import getNews from './news-api'
+import Layout from '../components/news-layout'
+import Head from '../components/news-head'
+import NewsContainer from '../components/news-container'
 
 const newsPageFactory = category => {
   const {title, description, pageSize} = conf

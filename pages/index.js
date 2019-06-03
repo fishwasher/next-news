@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import conf from '../util/newsConf'
+import conf from '../util/news-categories'
 import '../styles/homepage.less'
 
 const categories = Object.keys(conf)

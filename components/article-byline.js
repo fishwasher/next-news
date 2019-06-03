@@ -1,6 +1,11 @@
+import util from '../util/util'
+
+const {isValidName} = util
+
 const upper = val => typeof val === 'string' && val.trim().toUpperCase() || ''
 
 const fixAuthor = (author, source) => {
+  if (!isValidName(author)) return ''
   let a = upper(author), s = upper(source)
   if (a === s) return ''
   if (a.startsWith('HTTP')) a = a.replace(/^HTTPS?:\/+/, '').toLowerCase()
