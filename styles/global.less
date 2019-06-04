@@ -7,8 +7,8 @@
 @font-family-mono: "Roboto Mono", monospace;
 //@font-family-icon: "Material Icons";
 
-@bgcolor-newspage: #000;
-@bgcolor-article-card: #dcdcdc;
+@bgcolor-newspage: #dcdcdc;
+@bgcolor-article-card: #eee;
 @bgcolor-article-card-high: #fff;
 
 @screen-xs-max: 480px;
@@ -61,5 +61,14 @@ footer {
 button,
 .button {
   cursor: pointer;
+}
+
+.page-wide {
+  width: 100%;
+
+  @media @large-up {
+    max-width: @screen-l-min;
+    margin: 0 auto;
+  }
 }
 

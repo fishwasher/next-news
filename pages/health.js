@@ -1,3 +1,3 @@
-import newsPageFactory from '../util/news-page'
+import newsPageFactory from '../util/news-page-maker';
 
-export default newsPageFactory('health')
+export default newsPageFactory('health');

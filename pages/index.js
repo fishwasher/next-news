@@ -1,8 +1,6 @@
 import Link from 'next/link'
-import conf from '../util/news-categories'
+import {catlist} from '../util/news-categories'
 import '../styles/homepage.less'
-
-const categories = Object.keys(conf)
 
 export default function HomePage() {
   return (
@@ -11,7 +9,7 @@ export default function HomePage() {
       <h1>The Next News Project</h1>
       <div className="categories">
         <ul>
-        {categories.map((cat, i) => (
+        {catlist.map((cat, i) => (
           <li key={i}>
             <Link href={'/' + cat}>
               <a>{cat}</a>
