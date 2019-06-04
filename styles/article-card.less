@@ -1,0 +1,85 @@
+@import 'global';
+
+.article-card {
+  width: 100%;
+
+  .content {
+    color: #000;
+    font-size: 0.8rem;
+  }
+
+  .byline {
+    font-size: 0.8rem;
+    font-family: @font-family-sans;
+    color: #999;
+  }
+
+  .source {
+    font-style: italic;
+    text-transform: uppercase;
+  }
+
+  .author {
+    font-weight: 400;
+  }
+
+  .title {
+    margin: 0.5rem 0;
+    //font-size: 1rem;
+    font-family: @font-family-sans;
+  }
+
+  .description {
+    display: none;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+
+.card-size-small .article-card {
+  .content {
+    .byline {
+      font-size: 0.75rem;
+    }
+    .title {
+      font-weight: normal;
+    }
+  }
+}
+
+@media @large-up {
+
+  .card-size-large .article-card {
+    max-height: 8rem;
+    overflow: hidden;
+
+    .description {
+      display: block;
+      font-size: 0.9rem;
+      font-family: @font-family-serif;
+      min-height: 4rem;
+      max-height: 4rem;
+      overflow: hidden;
+      position: relative;
+      
+
+      &:after {
+        content: '';
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, transparent, @bgcolor-article-card);
+      }
+    }
+
+    &:hover .description:after {
+      background: linear-gradient(to bottom, transparent, @bgcolor-article-card-high);
+    }
+  }
+}

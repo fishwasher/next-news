@@ -1,0 +1,74 @@
+@import 'global';
+
+.article-container {
+  width: 100%;
+  background-color: #fff;
+}
+
+.article-body {
+   padding: 1rem;
+
+   div {
+     margin: 0.5rem 0;
+   }
+
+  figure {
+    width: 100%;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .byline {
+
+    .source {
+      font-style: italic;
+      text-transform: uppercase;
+    }
+  
+    .author {
+      font-weight: 600;
+    }
+  }
+
+  .dateline {
+    font-family: @font-family-mono;
+    color: #999;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    font-family: @font-family-serif;
+    margin: 1rem 0;
+  }
+
+  .description {
+    font-style: oblique;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 1rem 0 1rem 2rem;
+  }
+
+  .content {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .button-link {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #36c;
+
+    &:hover {
+      color: #f00;
+    }
+
+    &.close::before {
+      content: 'X ';
+    }
+  }
+
+}
