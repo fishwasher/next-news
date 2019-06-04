@@ -14,6 +14,7 @@ const newsPageFactory = category => {
   const NewsCategoryPage = function(props) {
     
     setGlobal({
+      category,
       article: null
     });
 
