@@ -7,9 +7,16 @@ import ArticleContainer from '../components/article-container';
 import NavBox from '../components/news-nav';
 import Footer from '../components/news-footer';
 
+const country = 'us';
+
+
+
 const newsPageFactory = category => {
 
   const {title, description, pageSize} = getConf(category);
+
+  // default page size is used if not configured
+  const getPageData = async () => await getNews(category, 'us', pageSize);
   
   const NewsCategoryPage = function(props) {
     
@@ -18,17 +25,22 @@ const newsPageFactory = category => {
       article: null
     });
 
+    let articles = props.articles;
+    if (!articles) {
+      articles = getPageData().articles;
+    }
+
     return [
       <Head title={title} description={description} />,
       <NavBox />,
-      <NewsContainer articles={props.articles} />,
+      <NewsContainer articles={articles} />,
       <ArticleContainer />,
       <Footer />,
     ];
   };
 
   NewsCategoryPage.getInitialProps = async function() {
-    const data = await getNews(category, 'us', pageSize); // default page size is used if not configured
+    const data = await getPageData(); // default page size is used if not configured
     const {articles} = data;
     return {articles};
   }
