@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const CustomHead = props => (
+const NewsHead = props => (
   <Head>
     <title>{props.title}</title>
     <meta charSet="utf-8" />
@@ -12,4 +12,4 @@ const CustomHead = props => (
   </Head>
 );
 
-export default CustomHead;
+export default NewsHead;

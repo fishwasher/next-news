@@ -1,24 +1,72 @@
 @import 'global';
 
 .news-nav {
-  .backplane {
-    .screen-cover();
-    position: relative;
-    background: transparent;
-    z-index: 10;
-  }
 
   .menu-trigger {
-    cursor: pointer;
+    font-size: 1.6rem;
+    width: 2rem;
+    color: #777;
+
+    &::before {
+      content: '☰'; //U+2630
+    }
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  .backplane {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    z-index: 1;
+  }
+
+  .list-holder {
+    position: relative;
   }
 
   .menu-list {
     position: absolute;
-    top: 0;
+    top: 2rem;
     left: 0;
-    z-index: 20;
-    background-color: #ffc;
+    z-index: 2;
+    background-color: #eee;
+    //border-radius: 4px;
+    list-style-type: none;
+    box-shadow: 5px 5px 20px #333;
+
+    li {
+      font-family: @font-family-serif;
+      font-size: 1.2rem;
+      padding: 0.2rem;
+      color: #000;
+
+      a, span {
+        padding: 0.2rem 2rem;
+      }
+
+      a {
+        text-decoration: none;
+        display: block;
+        color: #777;
+
+        &:hover {
+          color: #f30;
+        }
+      }
+
+      &.current {
+        cursor: default;
+      }
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
   }
-
-
 }

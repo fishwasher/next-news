@@ -48,6 +48,11 @@ body {
   box-sizing: border-box;
   font-family: @font-family-sans;
   background-color: @bgcolor-newspage;
+  padding: 0 1rem;
+
+  @media @large-up {
+    padding: 0;
+  }
 }
 
 .error {
@@ -70,12 +75,4 @@ button,
     max-width: @screen-l-min;
     margin: 0 auto;
   }
-}
-
-.screen-cover {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }

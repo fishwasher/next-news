@@ -1,15 +1,27 @@
 import { setGlobal } from 'reactn';
 import getConf from './news-categories';
 import getNews from './news-api';
+
+import NewsPage from '../components/news-page';
+/*
 import Head from '../components/news-head';
+import Header from '../components/news-header';
 import NewsContainer from '../components/news-container';
 import ArticleContainer from '../components/article-container';
-import NavBox from '../components/news-nav';
+//import NavBox from '../components/news-nav';
 import Footer from '../components/news-footer';
+*/
+
+const country = 'us';
+
+
 
 const newsPageFactory = category => {
 
   const {title, description, pageSize} = getConf(category);
+
+  // default page size is used if not configured
+  const getPageData = async () => await getNews(category, 'us', pageSize);
   
   const NewsCategoryPage = function(props) {
     
@@ -18,17 +30,18 @@ const newsPageFactory = category => {
       article: null
     });
 
-    return [
-      <Head title={title} description={description} />,
-      <NavBox />,
-      <NewsContainer articles={props.articles} />,
-      <ArticleContainer />,
-      <Footer />,
-    ];
+    let articles = props.articles;
+    if (!articles) {
+      articles = getPageData().articles;
+    }
+
+    const pageProps = {title, description, articles};
+
+    return (<NewsPage {...pageProps} />);
   };
 
   NewsCategoryPage.getInitialProps = async function() {
-    const data = await getNews(category, 'us', pageSize); // default page size is used if not configured
+    const data = await getPageData(); // default page size is used if not configured
     const {articles} = data;
     return {articles};
   }
