@@ -1,11 +1,16 @@
 import { setGlobal } from 'reactn';
 import getConf from './news-categories';
 import getNews from './news-api';
+
+import NewsPage from '../components/news-page';
+/*
 import Head from '../components/news-head';
+import Header from '../components/news-header';
 import NewsContainer from '../components/news-container';
 import ArticleContainer from '../components/article-container';
-import NavBox from '../components/news-nav';
+//import NavBox from '../components/news-nav';
 import Footer from '../components/news-footer';
+*/
 
 const country = 'us';
 
@@ -30,13 +35,9 @@ const newsPageFactory = category => {
       articles = getPageData().articles;
     }
 
-    return [
-      <Head title={title} description={description} />,
-      <NavBox />,
-      <NewsContainer articles={articles} />,
-      <ArticleContainer />,
-      <Footer />,
-    ];
+    const pageProps = {title, description, articles};
+
+    return (<NewsPage {...pageProps} />);
   };
 
   NewsCategoryPage.getInitialProps = async function() {

@@ -1,13 +1,21 @@
 @import 'global';
 
 .news-footer {
-  width: 100%;
+  width: 90%;
+  margin: 1rem auto;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: stretch;
 
-  .icon {
-    font-size: 24px;
+  .copy {
+    display: inline-block;
+    width: 1.6rem;
+    margin-top: -8px;
+
+    &::before {
+      content: '☺'; // &#9786;
+      font-size: 24px;
+    }
   }
 }

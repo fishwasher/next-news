@@ -2,11 +2,9 @@ import {useState} from 'react';
 import {useGlobal} from 'reactn';
 import Link from 'next/link';
 import getConf, {catlist} from '../util/news-categories';
+import KeyHandler from './global-key-handler';
 import '../styles/news-nav.less';
 
-const linkStyle = {
-  marginRight: 15
-}
 
 const NavBox = () => {
 
@@ -18,7 +16,11 @@ const NavBox = () => {
 
   const itemContent = (catname, idx) => {
     const {title} = getConf(catname);
-    if (catname === category) return (<li key={idx} className="current">{title}</li>);
+    if (catname === category) return (
+      <li key={idx} className="current">
+        <span>{title}</span>
+      </li>
+      );
     return (
       <li key={idx}>
         <Link href={'/' + catname}>
@@ -30,14 +32,17 @@ const NavBox = () => {
 
   return [
     <div className="news-nav">
-      <span className="menu-trigger" onClick={toggleMenu}>Menu</span>
+      <span className="menu-trigger button" onClick={toggleMenu} />
       {expanded ?
-        [<div className="backplane" onClick={closeMenu}>
-        <ul className="menu-list">
+        [<KeyHandler callback={closeMenu} />,
+        <div className="backplane" onClick={closeMenu}>
+          <div className="list-holder">
+          <ul className="menu-list">
           {catlist.map((catname, idx) => {
             return itemContent(catname, idx)
           })}
-        </ul>
+          </ul>
+          </div>
         </div>]
         : null
       }
