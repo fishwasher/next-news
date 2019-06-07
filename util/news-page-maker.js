@@ -1,27 +1,14 @@
-import { setGlobal } from 'reactn';
+import {setGlobal} from 'reactn';
 import getConf from './news-categories';
 import getNews from './news-api';
 
 import NewsPage from '../components/news-page';
-/*
-import Head from '../components/news-head';
-import Header from '../components/news-header';
-import NewsContainer from '../components/news-container';
-import ArticleContainer from '../components/article-container';
-//import NavBox from '../components/news-nav';
-import Footer from '../components/news-footer';
-*/
-
-const country = 'us';
-
-
 
 const newsPageFactory = category => {
 
-  const {title, description, pageSize} = getConf(category);
+  const {title, description} = getConf(category);
 
-  // default page size is used if not configured
-  const getPageData = async () => await getNews(category, 'us', pageSize);
+  const getPageData = async () => await getNews({category});
   
   const NewsCategoryPage = function(props) {
     
