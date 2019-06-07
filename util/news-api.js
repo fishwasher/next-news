@@ -1,9 +1,21 @@
 import fetch from 'isomorphic-unfetch';
+import qs from 'query-string';
 
-const getApiUrl = (category, country, pageSize) => `http://podvorny.com/vendor/api?feed=newsapi&type=top&category=${category}&country=${country}&size=${pageSize}`;
+const baseConfig = {
+  feed: 'newsapi',
+  type: 'top',
+  country: 'us',
+  size: 100
+};
 
-const getNews = async (category, country = 'us', pageSize = 50) => {
-  const url = getApiUrl(category, country, pageSize);
+export const getApiUrl = (config) => {
+  let params = Object.assign({}, baseConfig, config || {});
+  const endpoint = 'https://newsapi.strayfish.now.sh/api';
+  return endpoint + '?' + qs.stringify(params);
+};
+
+const getNews = async (config) => {
+  const url = getApiUrl(config);
   const ret = {};
   console.log(`fetching '${url}'`);
   try {
@@ -14,6 +26,7 @@ const getNews = async (category, country = 'us', pageSize = 50) => {
     Object.assign(ret, data);
   } catch (x) {
     console.error(x);
+    ret.error = x.toString();
   }
   return ret;
 }
