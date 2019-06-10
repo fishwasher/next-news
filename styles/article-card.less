@@ -4,14 +4,14 @@
   width: 100%;
 
   .content {
-    color: #000;
+    color: @color-gray-one;
     font-size: 0.8rem;
   }
 
   .byline {
     font-size: 0.8rem;
     font-family: @font-family-sans;
-    color: #999;
+    color: @color-gray-three;
   }
 
   .source {
@@ -38,6 +38,11 @@
   }
 }
 
+.card-size-large .article-card {
+  .title {
+    color: @color-low;
+  }
+}
 
 .card-size-small .article-card {
   .content {
@@ -53,20 +58,6 @@
   }
 }
 
-
-.card-size-medium .article-card {
-  .content {
-    line-height: 1.2;
-    
-    .byline {
-      font-size: 0.8rem;
-    }
-    .title {
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
-  }
-}
 
 @media @large-up {
 

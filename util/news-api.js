@@ -4,8 +4,7 @@ import qs from 'query-string';
 const baseConfig = {
   feed: 'newsapi',
   type: 'top',
-  country: 'us',
-  size: 100
+  country: 'us'
 };
 
 export const getApiUrl = (config) => {

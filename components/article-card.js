@@ -8,7 +8,7 @@ const ArticleCard = props => {
   const [,setArticle] = useGlobal('article');
 
   return [
-  <div className="article-card button" role="button" onClick={() => setArticle(article)}>
+  <div className="article-card button anim-fade-in" role="button" onClick={() => setArticle(article)}>
     <div className="content">
       <ByLine author={article.author} source={article.source && article.source.name} />
       <h3 className="title">{article.title}</h3>

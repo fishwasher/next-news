@@ -7,24 +7,19 @@
   li {
     width: 100%;
     padding: 0.5rem;
-    margin-bottom: 1rem;
+    margin: 0.5rem 0;
     background-color:@bgcolor-article-card;
     border: 0;
-    border-left: 0.5rem solid #d2d2d2;
+    //border-top: 1px dotted @color-gray-four;
+    border-radius: 4px;
 
     &:hover {
-      background-color: #fff;
+      background-color: @color-high;
     }
   }
 
-  &.card-size-medium li {
-    border-color: #ccc;
-    border-left-width: 0.6rem;
-  }
-
   &.card-size-large li {
-    border-color: #b2b2b2;
-    border-left-width: 1rem;
+    border-radius: 8px;
   }
 
   @media @small-up {
@@ -44,10 +39,6 @@
       width: 30%;
     }
 
-    &.card-size-medium li {
-      width: 40%;
-    }
-
     &.card-size-large li {
       width: 43%;
     }
@@ -57,10 +48,6 @@
 
     &.card-size-small li {
       width: 23%;
-    }
-
-    &.card-size-medium li {
-      width: 27%;
     }
 
     &.card-size-large li {
