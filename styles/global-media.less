@@ -1,0 +1,28 @@
+/* screen cutpoints and media queries */
+
+@screen-xs-max: 480px;
+@screen-s-min: @screen-xs-max + 1px;
+@screen-s-max: 750px;
+@screen-m-min: @screen-s-max + 1px;
+@screen-m-max: 900px;
+@screen-l-min: @screen-m-max + 1px;
+@screen-l-max: 1280px;
+@screen-xl-min: @screen-l-max + 1px;
+
+@screen-hd:  ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+               ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+               ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+               ~"only screen and (min-device-pixel-ratio: 1.5)";
+
+@xsmall: ~"only screen and (max-width: @{screen-xs-max})";
+@small: ~"only screen and (min-width: @{screen-s-min}) and (max-width: @{screen-s-max})";
+@small-medium: ~"only screen and (min-width: @{screen-s-min}) and (max-width: @{screen-m-max})";
+@medium: ~"only screen and (min-width: @{screen-m-min}) and (max-width: @{screen-m-max})";
+@medium-large: ~"only screen and (min-width: @{screen-m-min}) and (max-width: @{screen-l-max})";
+@large: ~"only screen and (min-width: @{screen-l-min}) and (max-width: @{screen-l-max})";
+@xlarge: ~"only screen and (min-width: @{screen-xl-min})";
+@small-up: ~"only screen and (min-width: @{screen-s-min})";
+@medium-up: ~"only screen and (min-width: @{screen-m-min})";
+@large-up: ~"only screen and (min-width: @{screen-l-min})";
+
+@print: ~"print";

@@ -2,7 +2,8 @@
 
 .article-container {
   width: 100%;
-  background-color: #fff;
+  color: @textcolor-article;
+  background-color: @bgcolor-article;
 }
 
 .article-body {
@@ -35,7 +36,7 @@
 
   .dateline {
     font-family: @font-family-mono;
-    color: #999;
+    color: lighten(@textcolor-article, 50%);
   }
 
   .title {

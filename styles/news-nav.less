@@ -5,14 +5,14 @@
   .menu-trigger {
     font-size: 1.6rem;
     width: 2rem;
-    color: #777;
+    color: @color-gray-six;
 
     &::before {
       content: '☰'; //U+2630
     }
 
     &:hover {
-      color: #000;
+      color: @color-gray-eight;
     }
   }
 
@@ -32,19 +32,19 @@
 
   .menu-list {
     position: absolute;
-    top: 2rem;
+    top: 1rem;
     left: 0;
     z-index: 2;
-    background-color: #eee;
-    //border-radius: 4px;
+    background-color: @color-gray-seven;
     list-style-type: none;
-    box-shadow: 5px 5px 20px #333;
+    //border-radius: 8px;
+    box-shadow: 5px 5px 20px @color-gray-two;
 
     li {
       font-family: @font-family-serif;
       font-size: 1.2rem;
-      padding: 0.2rem;
-      color: #000;
+      //padding: 0.2rem;
+      color: @color-gray-one;
 
       a, span {
         padding: 0.2rem 2rem;
@@ -53,10 +53,12 @@
       a {
         text-decoration: none;
         display: block;
-        color: #777;
+        //border-radius: 8px;
+        color: @color-gray-three;
 
         &:hover {
-          color: #f30;
+          //background-color: @color-gray-two;
+          color: @color-gray-eight;
         }
       }
 
@@ -65,7 +67,11 @@
       }
 
       &:hover {
-        background-color: #fff;
+        background-color: @color-gray-two;
+      }
+
+      &.current:hover {
+        background-color: transparent;
       }
     }
   }

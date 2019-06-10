@@ -14,23 +14,17 @@ const NewsContainer = props => {
   if (!len ) {
     return <p className="error">No articles found</p>
   }
-  const topListSize = Math.min(len, 12);
-  const midListSize = Math.min(len - topListSize, 12);
+  const topListSize = Math.min(len, 6);
+  //const midListSize = Math.min(len - topListSize, 12);
   const topArticles = articles.slice(0, topListSize);
-  const midArticles = articles.slice(topListSize, topListSize + midListSize);
-  const otherArticles = articles.slice(topListSize + midListSize);
+  //const midArticles = articles.slice(topListSize, topListSize + midListSize);
+  const otherArticles = articles.slice(topListSize);
 
   return [
     <div className="news-box page-wide">
       {topArticles.length ?
         <div className="toplist">
         <ArticleList articles={topArticles} cardSize="large" />
-      </div>
-      : null
-      }
-      {midArticles.length ?
-        <div className="toplist">
-        <ArticleList articles={midArticles} cardSize="medium" />
       </div>
       : null
       }

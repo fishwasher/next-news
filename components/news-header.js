@@ -3,7 +3,7 @@ import '../styles/news-header.less';
 
 const Header = props => [
   <header className="news-header">
-    <h1>{'News in ' + props.title}</h1>
+    <h1>{props.title + ' News'}</h1>
     <Menu />
   </header>
 ];

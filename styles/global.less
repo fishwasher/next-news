@@ -1,42 +1,8 @@
-// forcing external font import to be treated as CSS (not LESS), otherwise it fails
-//@import (css) url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab|Material+Icons&display=swap');
-@import (css) url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab&display=swap');
 
-@font-family-serif: "Roboto Slab", serif;
-@font-family-sans: Roboto, sans-serif;
-@font-family-mono: "Roboto Mono", monospace;
-//@font-family-icon: "Material Icons";
 
-@bgcolor-newspage: #dcdcdc;
-@bgcolor-article-card: #eee;
-@bgcolor-article-card-high: #fff;
-
-@screen-xs-max: 480px;
-@screen-s-min: @screen-xs-max + 1px;
-@screen-s-max: 750px;
-@screen-m-min: @screen-s-max + 1px;
-@screen-m-max: 900px;
-@screen-l-min: @screen-m-max + 1px;
-@screen-l-max: 1280px;
-@screen-xl-min: @screen-l-max + 1px;
-
-@screen-hd:  ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
-               ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
-               ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
-               ~"only screen and (min-device-pixel-ratio: 1.5)";
-
-@xsmall: ~"only screen and (max-width: @{screen-xs-max})";
-@small: ~"only screen and (min-width: @{screen-s-min}) and (max-width: @{screen-s-max})";
-@small-medium: ~"only screen and (min-width: @{screen-s-min}) and (max-width: @{screen-m-max})";
-@medium: ~"only screen and (min-width: @{screen-m-min}) and (max-width: @{screen-m-max})";
-@medium-large: ~"only screen and (min-width: @{screen-m-min}) and (max-width: @{screen-l-max})";
-@large: ~"only screen and (min-width: @{screen-l-min}) and (max-width: @{screen-l-max})";
-@xlarge: ~"only screen and (min-width: @{screen-xl-min})";
-@small-up: ~"only screen and (min-width: @{screen-s-min})";
-@medium-up: ~"only screen and (min-width: @{screen-m-min})";
-@large-up: ~"only screen and (min-width: @{screen-l-min})";
-
-@print: ~"print";
+@import 'global-colors-fonts';
+@import 'global-media';
+@import 'global-anim';
 
 * {
   padding: 0;
@@ -47,7 +13,8 @@
 body {
   box-sizing: border-box;
   font-family: @font-family-sans;
-  background-color: @bgcolor-newspage;
+  color: @textcolor-body;
+  background-color: @bgcolor-body;
   padding: 0 1rem;
 
   @media @large-up {
@@ -56,7 +23,7 @@ body {
 }
 
 .error {
-  color: #c00;
+  color: @color-error;
 }
 
 footer {
