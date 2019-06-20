@@ -1,6 +1,7 @@
 import {useGlobal} from 'reactn';
 import {unescapeCodePoints, formatDate, trimArticleContent} from '../util/util';
 import ByLine from './article-byline';
+import KeyHandler from './global-key-handler';
 import '../styles/article-container.less';
 
 const ArticleContainer = () => {
@@ -20,6 +21,7 @@ const ArticleContainer = () => {
     );
 
   return [
+    <KeyHandler callback={closeIt} />,
     <div className="article-container">
       <div className="article-body page-wide">
       {closeBar}
